@@ -1,21 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb; /* Soft light background */
+  --foreground: #111827; /* Near-black for headings */
+
+  /* Text */
+  --text-muted: #4b5563; /* Paragraphs / descriptions */
+
+  /* Brand */
+  --accent: #ff0050; /* TikTok-style pink/red */
+  --secondary: #2563eb; /* Calm blue for links/tags */
+
+  /* UI */
+  --border: #e5e7eb;
+  --surface: #d8bebe; /* Cards */
+
+  --darkbg: #251d29;
+  --darkt: #ffd1f7;
+  --lightbg: #fff;
+  --lightt: #d43370;
+
+  --toggleHeight: 40px;
+  --toggleWidth: 70px;
+  --toggleBtnRadius: 10em;
+
+  --bgColor--night: #423966;
+  --toggleBtn-bgColor--night: var(--bgColor--night);
+  --mooncolor: #d9fbff;
+  --bgColor--day: #9ee3fb;
+  --toggleBtn-bgColor--day: var(--bgColor--day);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-text-muted: var(--text-muted);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .dark {
+    /* Base */
+    --background: #0b0b0f; /* Deep dark (not pure black) */
+    --foreground: #f9fafb; /* Clean white text */
+
+    /* Text */
+    --text-muted: #9ca3af; /* Soft gray paragraphs */
+
+    /* Brand */
+    --accent: #ff0050; /* SAME accent (important) */
+    --secondary: #60a5fa; /* Lifted blue for contrast */
+
+    /* UI */
+    --border: #1f2933;
+    --surface: #111827; /* Cards slightly lifted */
+    --darkbg: #251d29;
+    --darkt: #ffd1f7;
+    --lightbg: #fff;
+    --lightt: #d43370;
+
+    --toggleHeight: 40px;
+    --toggleWidth: 70px;
+    --toggleBtnRadius: 10em;
+
+    --bgColor--night: #423966;
+    --toggleBtn-bgColor--night: var(--bgColor--night);
+    --mooncolor: #d9fbff;
+    --bgColor--day: #9ee3fb;
+    --toggleBtn-bgColor--day: var(--bgColor--day);
   }
 }
 
@@ -23,4 +80,132 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+}
+@layer base {
+  section {
+    @apply w-full px-8;
+  }
+  .container-custom {
+    @apply mx-auto py-12 w-full;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl  font-bold;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+
+  p {
+    @apply text-text-muted;
+  }
+}
+@layer components {
+  /* Day background */
+  .tdnn {
+    font-size: 20%;
+    position: relative;
+    height: 30px;
+    width: 60px;
+    border-radius: var(--toggleHeight);
+    transition: all 500ms ease-in-out;
+    background: var(--bgColor--night);
+  }
+  .day {
+    background: #ffbf71;
+  }
+  .moon {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    transition: all 400ms ease-in-out;
+
+    top: 5px;
+    left: 6px;
+    transform: rotate(-75deg);
+    width: 20px;
+    aspect-ratio: 1;
+    background: var(--bgColor--night);
+    box-shadow: 6px 6px 0 0em var(--mooncolor) inset,
+      rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+      rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+      rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+      rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+  }
+  .sun {
+    top: 5px;
+    left: 33px;
+    transform: rotate(0deg);
+    width: 21px;
+    aspect-ratio: 1;
+    background: #fff;
+  }
+  .animate-pulse-attention {
+    animation: bounce-attention 1.6s ease-in-out infinite;
+  }
+
+  .emoji-float {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+    animation-name: float-up;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+@keyframes bounce-attention {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.15;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-500px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.markdown ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.markdown ol {
+  padding: 0 20px;
+  list-style: decimal;
+}
+
+.markdown li {
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+}
+
+.markdown p {
+  line-height: 1.7;
+  margin: 1rem 0;
 }
