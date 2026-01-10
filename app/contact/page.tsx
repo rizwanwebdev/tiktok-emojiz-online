@@ -89,7 +89,7 @@ const page = () => {
                     name="message"
                     id="message"
                     className="border p-2 rounded-md"
-                    rows="4"
+                    rows={4}
                   ></textarea>
                 </fieldset>
                 <button
