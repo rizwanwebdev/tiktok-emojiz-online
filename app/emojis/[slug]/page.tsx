@@ -70,6 +70,7 @@ export default async function EmojiPage({ params }: Props) {
                 </p>
                 <a
                   href={emoji.image}
+                  download
                   className="w-fit bg-foreground text-background rounded text-center py-2 px-4 duration-300 transition-all hover:bg-text-muted"
                 >
                   Download {emoji.name} Emoji PNG image
