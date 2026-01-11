@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-  themeColor: "#000000",
 };
 
 export default function RootLayout({

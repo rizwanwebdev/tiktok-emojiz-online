@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f9fafb; /* Soft light background */
+  --background: #fff; /* Soft light background */
   --foreground: #111827; /* Near-black for headings */
 
   /* Text */
@@ -12,8 +12,8 @@
   --secondary: #2563eb; /* Calm blue for links/tags */
 
   /* UI */
-  --border: #e5e7eb;
-  --surface: #d8bebe; /* Cards */
+  --border: #e2e8f0;
+  --surface: #ffdead; /* Cards */
 
   --darkbg: #251d29;
   --darkt: #ffd1f7;

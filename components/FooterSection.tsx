@@ -6,14 +6,18 @@ const FooterSection = () => {
     <footer className=" border-t-2 border-border">
       <div className="px-8 container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         <div className="space-y-3">
-          <Link href="/">
+          <Link
+            href="/"
+            className="flex flex-row gap-1 items-center hover:text-accent duration-300 transition-all"
+          >
+            <img src="/tiktok-emojiz-logo.png" alt="" className="w-10" />
             <span className="font-bold text-2xl">TikTok Emojiz</span>
           </Link>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-            deleniti.
+          <p className="text-sm">
+            Copy and paste TikTok secret emojis and download transparent PNGs.
+            Explore hidden TikTok emoji codes, meanings, and assets.
           </p>
-          <div className="flex items-center gap-2 *:p-2 *:bg-foreground *:text-background *:rounded-xl *:hover:text-secondary *:transition-all duration-300">
+          <div className="flex items-center gap-2 *:bg-accent/50 *:p-2 *:text-white *:rounded-xl  *:hover:bg-secondary *:duration-300 *:transition-all">
             <a href="https://github.com/rizwanwebdev" target="_blank">
               <Github />
             </a>
@@ -70,10 +74,10 @@ const FooterSection = () => {
             SEO-friendly websites.
           </p>
           <a
-            href="mailto:rizwanwebdev1@gmail.com"
+            href="mailto:contact@rizwanweb.site"
             className="flex items-center flex-row gap-2 hover:text-secondary transition-all duration-200 text-text-muted"
           >
-            <Mail /> rizwanwebdev1@gmail.com
+            <Mail /> contact@rizwanweb.site
           </a>
           <a
             href="https://rizwnweb.site"

@@ -92,7 +92,7 @@ export default async function BlogsPage({ params }: Props) {
                 ))}
               </div>
               <hr />
-              <div className="flex flex-wrap  gap-3 *:p-1.5 *:bg-foreground *:text-background *:rounded-lg *:hover:text-accent *:duration-300 *:transition-all">
+              <div className="flex flex-wrap gap-3 *:bg-accent/50 *:p-1.5 *:text-white *:rounded-xl  *:hover:bg-secondary *:duration-300 *:transition-all">
                 <a href="https://Facebook.com/" target="_blank">
                   <Facebook className="w-7 h-7" />
                 </a>

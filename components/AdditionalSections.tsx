@@ -185,7 +185,7 @@ const AdditionalSections = () => {
       <section>
         <div className="container-custom flex justify-center items-center flex-col gap-3">
           <h2 className="text-center">FAQs</h2>
-          <div className="min-w-[80%] w-[80%] space-y-4 *:bg-foreground/10 *:text-secondary *:py-2 *:px-3 *:cursor-pointer *:rounded-xl *:border-2 *:border-accent/30">
+          <div className="lg:min-w-[80%] lg:w-[80%] space-y-4 *:bg-foreground/10 *:text-secondary *:py-2 *:px-3 *:cursor-pointer *:rounded-xl *:border-2 *:border-accent/30">
             <details>
               <summary>What are TikTok secret emojis?</summary>
               <p>
