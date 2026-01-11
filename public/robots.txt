@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://www.tiktokemojiz.online/sitemap.xml
