@@ -43,7 +43,7 @@ export default async function BlogsPage({ params }: Props) {
     <>
       <HeaderSection />
       <main>
-        <section>
+        <section className="overflow-hidden">
           <div className="container-custom grid grid-cols-1 lg:grid-cols-4 gap-4 relative">
             <div className="lg:col-span-3 bg-surface rounded-lg p-5 flex flex-col gap-4">
               <img
@@ -93,13 +93,13 @@ export default async function BlogsPage({ params }: Props) {
               </div>
               <hr />
               <div className="flex flex-wrap gap-3 *:bg-accent/50 *:p-1.5 *:text-white *:rounded-xl  *:hover:bg-secondary *:duration-300 *:transition-all">
-                <a href="https://Facebook.com/" target="_blank">
+                <a href="https://Facebook.com/rizwanwebdev" target="_blank">
                   <Facebook className="w-7 h-7" />
                 </a>
-                <a href="https://Facebook.com/" target="_blank">
+                <a href="https://Twitter.com/rizwanwebdev" target="_blank">
                   <Twitter className="w-7 h-7" />
                 </a>
-                <a href="https://Facebook.com/" target="_blank">
+                <a href="https://Instagram.com/rizwanwebdev" target="_blank">
                   <Instagram className="w-7 h-7" />
                 </a>
               </div>

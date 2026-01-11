@@ -13,7 +13,7 @@
 
   /* UI */
   --border: #e2e8f0;
-  --surface: #ffdead; /* Cards */
+  --surface: #f0e6d6; /* Cards */
 
   --darkbg: #251d29;
   --darkt: #ffd1f7;
@@ -90,7 +90,7 @@ body {
     @apply mx-auto py-12 w-full;
   }
   h1 {
-    @apply text-3xl md:text-4xl  font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl  font-bold;
   }
 
   h2 {
@@ -99,6 +99,12 @@ body {
 
   h3 {
     @apply text-xl md:text-2xl font-bold;
+  }
+  h4 {
+    @apply text-lg md:text-xl font-bold;
+  }
+  h5 {
+    @apply text-lg md:text-lg font-bold;
   }
 
   p {
@@ -163,6 +169,30 @@ body {
     pointer-events: none;
     user-select: none;
   }
+  .markdown ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .markdown ol {
+    padding: 0 20px;
+    list-style: decimal;
+  }
+
+  .markdown li {
+    color: var(--text-muted);
+    margin: 0.5rem 0;
+  }
+  .markdown li h3 {
+    color: var(--foreground) !important;
+  }
+
+  .markdown p {
+    line-height: 1.7;
+    margin: 1rem 0;
+  }
+  .markdown strong {
+    color: var(--foreground);
+  }
 }
 @keyframes bounce-attention {
   0%,
@@ -189,23 +219,4 @@ body {
     transform: translateY(-500px) scale(1.1);
     opacity: 0;
   }
-}
-
-.markdown ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-.markdown ol {
-  padding: 0 20px;
-  list-style: decimal;
-}
-
-.markdown li {
-  color: var(--text-muted);
-  margin: 0.5rem 0;
-}
-
-.markdown p {
-  line-height: 1.7;
-  margin: 1rem 0;
 }
